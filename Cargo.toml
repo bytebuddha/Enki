@@ -1,0 +1,31 @@
+[package]
+name = "enki"
+version = "0.1.0"
+authors = ["Bytebuddha <pmg41494@protonmail.com>"]
+edition = "2018"
+default-run = "enki"
+
+[dependencies]
+log = "0.4.8"
+log4rs = "*"
+xdg = "2.2.0"
+clap = "2.33.1"
+textwrap = "0.11"
+serde = "1.0.111"
+indexmap = "1.4.0"
+derive_builder = "*"
+serde_json = "1.0.55"
+async-trait = "0.1.35"
+futures = "0.3.0-alpha.16"
+tui = { git = "https://github.com/fdehau/tui-rs", features = ["crossterm"] }
+crossterm = { version = "0.17.5", features = ["event-stream"] }
+xi-rpc = { git = "https://github.com/xi-editor/xi-editor", rev="72ce488" }
+xi-core-lib = { git = "https://github.com/xi-editor/xi-editor", rev="72ce488" }
+
+[dependencies.tokio]
+version = "0.2.21"
+features = ["time", "macros", "rt-core", "io-util", "process", "stream", "sync", "rt-threaded", "blocking"]
+
+[[bin]]
+name = "enki"
+path = "src/main.rs"
