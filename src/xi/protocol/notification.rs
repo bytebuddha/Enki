@@ -19,7 +19,6 @@ pub enum XiNotification {
     AvailableThemes(AvailableThemes),
     FindStatus(FindStatus),
     ReplaceStatus(ReplaceStatus),
-    #[serde(rename = "available_languages")]
     AvailableLanguages(AvailableLanguages),
     LanguageChanged(LanguageChanged),
 }
