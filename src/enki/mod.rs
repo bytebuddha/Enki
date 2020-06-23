@@ -88,7 +88,7 @@ impl<'a> Enki<'a> {
         info!("Using Config Dir: {:?}", config_dir);
         info!("Using Extras Dir: {:?}", extras_dir);
         enki.client.client_started(config_dir, extras_dir).await?;
-        enki.client.set_theme("InspiredGitHub").await?;
+        enki.client.set_theme("base16-eighties.dark").await?;
 
         if let Some(actions) = start.actions {
             for action in actions {

@@ -49,8 +49,8 @@ pub fn get_arguments<'a>() -> App<'a, 'a> {
             (@subcommand find =>
                 (template: HELP_TEMPLATE)
                 (@arg query: +required +takes_value     "The thing to search for")
-                (@arg previous: -p --previous conflicts_with[previous] "Move to the previous find result")
-                (@arg next: -n --next conflicts_with[next] "Move to the next find result")
+                (@arg previous: -p --previous conflicts_with[next] "Move to the previous find result")
+                (@arg next: -n --next conflicts_with[previous] "Move to the next find result")
                 (@arg regex: -r --regex "Use REGEX search")
                 (@arg case: -c --case "Case Sensitive")
                 (@arg words: -w --words "Search whole words")

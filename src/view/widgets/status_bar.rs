@@ -9,6 +9,6 @@ pub struct StatusBar {}
 
 impl Widget for StatusBar {
     fn render(self, area: Rect, buf: &mut Buffer) {
-        buf.set_background(area, Color::LightCyan);
+        buf.set_background(area, Color::Rgb(30, 30, 50));
     }
 }

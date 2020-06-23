@@ -13,20 +13,20 @@ pub struct TopBar<'a> {
 }
 
 impl<'a> TopBar<'a> {
-    fn get_background_style(&self) -> Color {
-        Color::DarkGray
+    fn get_background_color(&self) -> Color {
+        Color::Rgb(30, 30, 50)
     }
 
     fn get_tab_style(&self) -> Style {
-        Style::default().bg(Color::DarkGray).fg(Color::Gray)
+        Style::default().bg(Color::Rgb(30, 30, 50)).fg(Color::Gray)
     }
 }
 
 impl<'a> Widget for TopBar<'a> {
     fn render(self, area: Rect, buf: &mut Buffer) {
-        buf.set_background(area, self.get_background_style());
+        buf.set_background(area, self.get_background_color());
 
-        let tabs = "•".repeat(self.editor.views.len());
+        let tabs = "⚫".repeat(self.editor.views.len());
         let x = (area.x + area.width - tabs.len() as u16) / 2;
         buf.set_string(x, area.y, &tabs, self.get_tab_style());
         let view_index = if let Some(index) = self.editor.views.get_current_index() {
@@ -34,6 +34,6 @@ impl<'a> Widget for TopBar<'a> {
         } else {
             x
         };
-        buf.get_mut(view_index, area.y).set_fg(Color::White);
+        buf.get_mut(view_index, area.y).set_fg(Color::LightGreen);
     }
 }
